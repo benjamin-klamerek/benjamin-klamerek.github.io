@@ -16,4 +16,4 @@ cmnd/XXX/YYY
 
 Where :
 - XXX must be replaced by device name set up in OpenBeken firmware
-- YYY is the command (like `Start_Opening`). you can use an alias from teh script file.
+- YYY is the command (like `Start_Opening`). you can use an alias from script file.

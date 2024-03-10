@@ -202,5 +202,3 @@ startDriver SSDP
 In safe mode, you can access the device in AP mode. Pins are disabled. Very useful when Wifi configuration is not more valid.
 
 
-TODO
-
