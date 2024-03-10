@@ -1,0 +1,9 @@
+
+To search a package or a theme : ruby_gems
+
+I used WSL on Windows. (username and password are local computer name in lowercase)
+To open my session with Ubuntu : Open PowerShell and execute 'bash'
+
+In repository folder, you can run the website locally by running : bundle exec jekyll serve
+
+
