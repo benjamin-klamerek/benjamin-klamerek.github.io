@@ -19,6 +19,39 @@ nav_order: 2
 
 ---
 
+## Find device after flashing
+
+It's maybe obvious but flash tool will not give you the IP used by the device and there is no DNS setup.
+
+So, to find it, you will have to use your local box and identify it (most the time : 192.168.1.1)
+
+When you have the IP, you can open the browser and start configuration.
+
+## PIN retro engineering
+
+There is a screen with OpenBeken firmware where you can play with pin board to detect if they are set up as input and output.
+
+(And also see the effect on the device)
+
+Here Etersky roller shutter pin allocation : 
+
+```
+- P6 => Relay 1 (UP)
+- P9 => Relay 2 (DOWN)
+- P11 => Shutdown all button leds when active
+- P14 => LED on button 1 red when activated (blue otherwise)
+- P8 => LED on button 2 red when activated (blue otherwise)
+- P23 => LED on button 3 red when activated (blue otherwise)
+- P36 => Activate second LED on button 1 (green)
+- P24 => Button 1
+- P10 => Button 1
+- P7 => Button 3
+```
+
+You can assign roles to pins. This is done automatically by the script below.
+
+Here some info about it : https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/ioRoles.md?plain=1
+
 ## Script
 
 Here the script that emulate 90% of the behavior of the roller shutter :
@@ -151,6 +184,9 @@ return
 ___
 
 ## Tips
+
+- https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/commands.md
+  
 
 - To make the device visible in Windows (not a DNS name) : 
 

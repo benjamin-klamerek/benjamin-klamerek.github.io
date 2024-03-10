@@ -4,3 +4,4 @@ _site
 .jekyll-metadata
 vendor
 /.idea/benjamin-klamerek.github.io.iml
+Gemfile.lock
