@@ -5,3 +5,4 @@ _site
 vendor
 /.idea/benjamin-klamerek.github.io.iml
 Gemfile.lock
+/.idea/inspectionProfiles/Project_Default.xml
