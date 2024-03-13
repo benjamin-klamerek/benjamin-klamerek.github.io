@@ -1,8 +1,9 @@
 ---
 title: OpenBeken configuration
 layout: default
-parent: Roller shutters
+parent: OpenBeken
 nav_order: 2
+grand_parent: Roller shutters
 ---
 
 # OpenBeken configuration
@@ -198,7 +199,7 @@ startDriver SSDP
 
 - `alias Start_Opening` an alias is also useful to be called from external command (like MQTT)
 
-- Channel 5 is a special counter to activate safe mode (after pushing `stop` button many times). 
-In safe mode, you can access the device in AP mode. Pins are disabled. Very useful when Wifi configuration is not more valid.
+- Channel 5 is a special counter variable to activate safe mode (after pushing `stop` button many times). 
+In safe mode, you can access the device in AP mode. Pins are disabled. Very useful when Wifi configuration is no more valid.
 
 
