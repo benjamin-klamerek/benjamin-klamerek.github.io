@@ -35,7 +35,7 @@ There is a screen with OpenBeken firmware where you can play with pin board to d
 (And also see the effect on the device)
 
 {: .warning }
-When trying to replicate a second device, I discover that depending on the controller used (WB3S or CB3S), the pin mapping is not exactly the same.
+When trying to duplicate the logic on a second device, I discovered that depending on the controller used (WB3S or CB3S), the mapping is not exactly the same.
 
 Here Etersky roller shutter pin allocation (CB3S): 
 
