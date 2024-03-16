@@ -57,7 +57,7 @@ Here Etersky roller shutter pin allocation (WB3S):
 ```
 - P6 => Relay 1 (UP)
 - P7 => Relay 2 (DOWN)
-- PX => Shutdown all button leds when active
+- P11 => Shutdown all button leds when active
 - P14 => LED on button 1 red when activated (blue otherwise)
 - P26 => LED on button 2 red when activated (blue otherwise)
 - P0 => LED on button 3 red when activated (blue otherwise)
