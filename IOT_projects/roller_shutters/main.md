@@ -27,7 +27,7 @@ As always, *there is a trick* : the manufacturer switched from ESP12 like module
 
 You cannot guess it from the inside, you have to open it and check device label :
 
-- CB3S => specific Tuya model => [OpenBeken](https://github.com/openshwprojects/OpenBK7231T_App)
+- CB3S or WB3S => specific Tuya model => [OpenBeken](https://github.com/openshwprojects/OpenBK7231T_App)
 - TYWE3S => ESP like =>  [Tasmota](https://github.com/arendst/Tasmota)
 
 I also saw a [tutorial](https://blakadder.com/replace-tuya-esp12/) to swap Tuya model by an ESP. But in my case, it was not working.
