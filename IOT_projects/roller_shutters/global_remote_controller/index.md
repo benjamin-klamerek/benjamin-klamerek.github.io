@@ -68,30 +68,23 @@ Finally, you can plug your RF 433Mhz module (in my case a RBX6) on correct PIN (
 
 ## About rules 
 
-TODO
-
-To use RF module :
 ```
-ON RfReceived#Data=<hex-value> DO <command> ENDON
-```
+Backlog GPIO12 1152; GPIO14 160; GPIO13 161; GPIO5 162
 
-For buttons : 
-```
-GPIO5 	162
-Rule3 ON Switch3#state DO Reset 1 ENDON
-Rule3 1
+Rule1 ON Switch1#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
+
+Rule1 + ON RfReceived#Data=0x82422 DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
 
 
-GPIO13 	161
 Rule2 ON Switch2#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
 
-Rule2 1
+Rule2 + ON RfReceived#Data=0x82421 DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
 
 
-GPIO14 	160
-Rule1 ON Switch2#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
+Rule3 ON Switch3#state DO Reset 1 ENDON
 
-rule1 1
+
+Backlog Rule1 1; Rule2 1; Rule3 1
 ```
 
 ## Tricks
