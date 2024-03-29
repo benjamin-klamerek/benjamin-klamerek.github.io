@@ -32,7 +32,7 @@ So I decided to understand Tasmota to create my how configuration.
 ESP-12S and ESP-12L modules have those pins already pulled internally. It is recommended to choose this version for easier installation.
 
 ESP-12E and ESP-12F modules need the GPIO15 pulled low and CH_PD or EN pin pulled high to boot
-https://templates.blakadder.com/ESP-12.html
+[https://templates.blakadder.com/ESP-12.html](https://templates.blakadder.com/ESP-12.html)
 
 
 
@@ -40,7 +40,7 @@ https://templates.blakadder.com/ESP-12.html
 
 I used console log to send configuration commands.
 
-https://tasmota.github.io/docs/GPIO-Conversion/#gpio-conversion is required to know which indexes to use.
+[gpio-conversion](https://tasmota.github.io/docs/GPIO-Conversion/#gpio-conversion) is required to know which indexes to use.
 
 If you can avoid it, don't use GPIOs: 0, 1, 2, 6-11, 15 and 16. That leaves 4, 5, 12, 13, 14 as GPIOs without any constraints. 3 being RX is also good to avoid (PWM is not working on this GPIO).
 
@@ -69,19 +69,20 @@ Finally, you can plug your RF 433Mhz module (in my case a RBX6) on correct PIN (
 ## About rules 
 
 ```
-Backlog GPIO12 1152; GPIO14 160; GPIO13 161; GPIO5 162
+Backlog GPIO12 1152; GPIO14 32; GPIO13 33; GPIO5 34
 
-Rule1 ON Switch1#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
+
+Rule1 ON Button1#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
 
 Rule1 + ON RfReceived#Data=0x82422 DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
 
 
-Rule2 ON Switch2#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
+Rule2 ON Button2#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
 
 Rule2 + ON RfReceived#Data=0x82421 DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
 
 
-Rule3 ON Switch3#state DO Reset 1 ENDON
+Rule3 ON Button3#state DO Reset 1 ENDON
 
 
 Backlog Rule1 1; Rule2 1; Rule3 1
