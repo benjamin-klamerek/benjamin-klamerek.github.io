@@ -95,3 +95,10 @@ I don't know exactly why and how I could simplify this but
 - Don't forget to configure MQTT
 - Not found a better way to configure pins that commands in console log
 - Not forget to ACTIVATE rules with ruleX 1
+
+## Final product
+
+Link to my EasyEDA project :
+[SCH_RemoteRFController_2024-03-30.json]({% link IOT_projects/roller_shutters/global_remote_controller/SCH_RemoteRFController_2024-03-30.json)
+
+![pcbv1.jpg]({% link IOT_projects/roller_shutters/global_remote_controller/epcbV1.png %})
