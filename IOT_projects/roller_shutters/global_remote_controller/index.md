@@ -72,14 +72,18 @@ Finally, you can plug your RF 433Mhz module (in my case a RBX6) on correct PIN (
 Backlog GPIO12 1152; GPIO14 32; GPIO13 33; GPIO5 34
 
 
-Rule1 ON Button1#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
+Rule1 ON event#close DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
 
-Rule1 + ON RfReceived#Data=0x82422 DO Backlog publish cmnd/Volet_Salon_centre/Start_Closing; publish cmnd/Volet_Cuisine_terrasse/Start_Closing; publish cmnd/Volet_Salon_terrasse/Start_Closing; publish cmnd/Volet_Salon_devant/POWER2 ON; publish cmnd/Volet_Cuisine_fenetre/POWER2 ON ENDON
+Rule1 + ON Button1#state DO event close ON ENDON
+
+Rule1 + ON RfReceived#Data=0x82422 DO event close ON ENDON
 
 
-Rule2 ON Button2#state DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
+Rule2 ON event#open DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
 
-Rule2 + ON RfReceived#Data=0x82421 DO Backlog publish cmnd/Volet_Salon_centre/Start_Opening; publish cmnd/Volet_Cuisine_terrasse/Start_Opening; publish cmnd/Volet_Salon_terrasse/Start_Opening; publish cmnd/Volet_Salon_devant/POWER ON; publish cmnd/Volet_Cuisine_fenetre/POWER ON ENDON
+Rule2 + ON Button2#state DO event open ON ENDON
+
+Rule2 + ON RfReceived#Data=0x82421 DO event open ON ENDON
 
 
 Rule3 ON Button3#state DO Reset 1 ENDON
