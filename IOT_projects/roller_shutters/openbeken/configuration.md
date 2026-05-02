@@ -22,17 +22,17 @@ grand_parent: Roller shutters
 
 ## Find device after flashing
 
-It's maybe obvious but flash tool will not give you the IP used by the device and there is no DNS setup.
+It may seem obvious, but the flash tool will not give you the IP address used by the device and there is no DNS setup.
 
-So, to find it, you will have to use your local box and identify it (most the time : 192.168.1.1)
+So, to find it, you will need to use your router and identify it (usually at: 192.168.1.1)
 
-When you have the IP, you can open the browser and start configuration.
+Once you have the IP address, you can open a browser and start the configuration.
 
 ## PIN retro engineering
 
-There is a screen with OpenBeken firmware where you can play with pin board to detect if they are set up as input and output.
+There is a screen in the OpenBeken firmware where you can interact with the pin board to detect whether they are set up as inputs or outputs.
 
-(And also see the effect on the device)
+(You can also observe the effect on the device)
 
 {: .warning }
 When trying to duplicate the logic on a second device, I discovered that depending on the controller used (WB3S or CB3S), the mapping is not exactly the same.
@@ -69,13 +69,13 @@ Here Etersky roller shutter pin allocation (WB3S):
 
 You can assign roles to pins. This is done automatically by the script below.
 
-Here some info about it : https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/ioRoles.md?plain=1
+Here is some information about it : https://github.com/openshwprojects/OpenBK7231T_App/blob/main/docs/ioRoles.md?plain=1
 
 ## Script
 
-Here the script that emulate 90% of the behavior of the roller shutter (CB3S version) :
+Here is the script that emulates ~90% of the behavior of the roller shutter (CB3S version):
 
-(Some explanation can be found below the script)
+(Some explanations can be found below the script)
 
 ```
 // Set up Aliases

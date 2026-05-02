@@ -9,9 +9,9 @@ has_children: true
 
 Now that all devices are flashed, I need a common remote controller to open/close them all at once.
 
-I have still many ESP-12 and I wanted a "generic" code with main features like OTA, RF management, AP mode, ...
+I still have many ESP-12 modules and I wanted a "generic" firmware with main features like OTA, RF management, AP mode, ...
 
-So I decided to understand Tasmota to create my how configuration.
+So I decided to study Tasmota to create my own configuration.
 
 # Global remote controller
 {: .no_toc }
@@ -38,9 +38,9 @@ ESP-12E and ESP-12F modules need the GPIO15 pulled low and CH_PD or EN pin pulle
 
 ## How to set up PINs
 
-I used console log to send configuration commands.
+I used the console to send configuration commands.
 
-[gpio-conversion](https://tasmota.github.io/docs/GPIO-Conversion/#gpio-conversion) is required to know which indexes to use.
+The [gpio-conversion](https://tasmota.github.io/docs/GPIO-Conversion/#gpio-conversion) documentation is required to know which indexes to use.
 
 If you can avoid it, don't use GPIOs: 0, 1, 2, 6-11, 15 and 16. That leaves 4, 5, 12, 13, 14 as GPIOs without any constraints. 3 being RX is also good to avoid (PWM is not working on this GPIO).
 
@@ -58,12 +58,12 @@ Here my commands :
 
 I wanted to use radio waves and with Tasmota this is possible.
 
-First, you have to configure pins like described in previous section.
+First, you have to configure pins as described in the previous section.
 
-After, even if Tasmota can handle it, you need to activate it and compile it yourself.
-(Check RF_SENSOR and USE_RC_SWITCH option in your code)
+Additionally, even if Tasmota can handle it, you need to activate it and compile it yourself.
+(Check the RF_SENSOR and USE_RC_SWITCH options in your code)
 
-Finally, you can plug your RF 433Mhz module (in my case a RBX6) on correct PIN (GPIO12 in my case).
+Finally, you can plug your RF 433 MHz module (in my case an RBX6) into the correct pin (GPIO12 in my case).
 
 
 ## About rules 
@@ -94,10 +94,10 @@ Backlog Rule1 1; Rule2 1; Rule3 1
 
 ## Tricks
 
-I don't know exactly why and how I could simplify this but 
-- I have to set up "generic" template with 18 pins first
+I don't know exactly why, or how I could simplify this, but:
+- I had to set up a "generic" template with 18 pins first
 - Don't forget to configure MQTT
-- Not found a better way to configure pins that commands in console log
+- I have not found a better way to configure pins than using commands in the console
 - Not forget to ACTIVATE rules with ruleX 1
 
 ## Final product

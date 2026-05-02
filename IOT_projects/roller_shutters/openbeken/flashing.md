@@ -24,27 +24,27 @@ grand_parent: Roller shutters
 
 ### Device accessibility
 
-To flash it, you will have either to solder some pins or either unsolder the full CB3S component.
+To flash it, you will either need to solder some pins or unsolder the full CB3S component.
 
 ![etersky.jpg]({% link IOT_projects/roller_shutters/images/unsolder_device.jpg %})
 
-In my case, I decided to fully remove CB3S component because : 
-- I thought it was possible to replace it per an ESP12 (failed)
-- It seems that if you solder the pins directly you have to cut one connection (and repair it after, which may be even more hard to operate)
+In my case, I decided to fully remove the CB3S component because:
+- I thought it was possible to replace it with an ESP12 (it failed)
+- It seems that if you solder the pins directly, you have to cut one connection (and repair it afterward, which may be even harder)
 
 {: .note } 
-After destroying 2 devices when trying to unsolder them, I found that the best option is to solder a copper wire first and, when removing, NEVER force. 
+After destroying 2 devices while trying to unsolder them, I found that the best option is to solder a copper wire first and, when removing it, NEVER force. 
 
 ### Tool
 
 https://github.com/openshwprojects/BK7231GUIFlashTool
 
-Nothing particular about this open, I just used a burner like this one :
+Nothing particular about this tool, I just used a burner like this one:
 
 ![etersky.jpg]({% link IOT_projects/roller_shutters/images/espburner.jpg %})
 
 {: .note } 
-Don't forget to test and use `OBK partition` to help you about Wifi configuration. 
+Don't forget to test and use `OBK partition` to help with Wi-Fi configuration. 
 
 
 
